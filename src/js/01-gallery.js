@@ -23,12 +23,6 @@ const makeGalleryCard = galleryItems.map(
 gallery.style.listStyle = 'none';
 gallery.insertAdjacentHTML('beforeend', makeGalleryCard.join(''));
 
-gallery.addEventListener('click', onClick);
-
 new SimpleLightbox('.gallery a', { captionDelay: 250, captionsData: 'alt' });
-
-function onClick(evt) {
-  evt.preventDefault();
-}
 
 console.log(galleryItems);
