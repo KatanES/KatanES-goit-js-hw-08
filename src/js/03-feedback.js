@@ -19,13 +19,15 @@ window.addEventListener('load', function () {
   if (data) {
     emailInput.value = data.email || '';
     messageInput.value = data.message || '';
-  } else {
-    alert('Fill all fields!');
   }
 });
 
 form.addEventListener('submit', e => {
   e.preventDefault();
+
+  if (emailInput.value === '' || messageInput.value === '') {
+    return alert('Please fill all fealds!');
+  }
 
   const formData = {
     email: emailInput.value,
